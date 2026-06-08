@@ -1,6 +1,12 @@
+import { SEO } from '../components/SEO';
+
 export function Legal() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 flex-1 w-full">
+      <SEO 
+        title="Legal & Disclaimer | Feed by Rural Utility Cost" 
+        description="Legal terms and disclaimers for the Feed app by Rural Utility Cost." 
+      />
       <h1 className="text-3xl font-bold text-slate-text mb-6 tracking-tight">Legal & Disclaimer</h1>
       
       <div className="bg-white border border-slate-200 rounded-xl p-8 text-sm leading-relaxed text-slate-sub space-y-6">

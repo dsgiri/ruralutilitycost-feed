@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
+import { SEO } from '../components/SEO';
+import { AdSense } from '../components/AdSense';
 import { TOOLS } from '../data';
 import { useFavorites } from '../hooks/useFavorites';
 import { ToolCard } from '../components/ToolCard';
@@ -17,6 +19,10 @@ export function Home() {
 
   return (
     <div className="flex flex-col flex-1 w-full max-w-full">
+      <SEO 
+        title="Feed Planning & Cost Hub | Rural Utility Cost" 
+        description="Compare feed options, estimate costs, plan rations, and manage feed waste with our suite of agricultural feed tools." 
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#1e293b] to-[#334155] text-white px-6 md:px-10 py-6 h-auto md:h-[100px] flex flex-col justify-center shrink-0">
         <h1 className="text-2xl font-bold mb-1">Feed Planning & Cost Hub</h1>
@@ -59,22 +65,33 @@ export function Home() {
             <div className="bg-white rounded-lg p-3 border border-dashed border-slate-300 text-[12px] text-slate-400 text-center leading-relaxed">
               Star a tool to pin it here for quick access across the ecosystem.
             </div>
-            <Link to="/favorites" className="mt-3 block text-center text-[13px] font-semibold text-brand-blue hover:underline">
+            <Link to="/favorites" aria-label="View your favorite tools" className="mt-3 block text-center min-h-[48px] leading-[48px] text-[13px] font-semibold text-brand-blue hover:underline">
               View stored favorites →
             </Link>
+          </div>
+          
+          <div className="hidden md:block">
+             <AdSense slot="sidebar_ad_slot" className="w-[300px] h-[250px]" />
           </div>
         </aside>
 
         {/* Tools Content */}
         <div className="flex flex-col gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredTools.map(tool => (
-              <ToolCard 
-                key={tool.id} 
-                tool={tool} 
-                isFavorite={isFavorite(tool.id)} 
-                onToggleFavorite={toggleFavorite} 
-              />
+            {filteredTools.map((tool, index) => (
+              <Fragment key={tool.id}>
+                <ToolCard 
+                  tool={tool} 
+                  isFavorite={isFavorite(tool.id)} 
+                  onToggleFavorite={toggleFavorite} 
+                />
+                {/* In-content responsive AdSense after first 3 cards */}
+                {index === 2 && (
+                  <div key="inline-ad" className="col-span-1 sm:col-span-2 lg:col-span-3">
+                    <AdSense slot="in_content_ad_slot" className="w-full" />
+                  </div>
+                )}
+              </Fragment>
             ))}
           </div>
 

@@ -1,6 +1,12 @@
+import { SEO } from '../components/SEO';
+
 export function About() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 flex-1 w-full">
+      <SEO 
+        title="About Feed Hub | Rural Utility Cost" 
+        description="Learn about the Rural Utility Cost Feed App, our specialized tools for ration planning, feed storage, and waste reduction." 
+      />
       <h1 className="text-3xl font-bold text-slate-text mb-6 tracking-tight">About</h1>
       
       <div className="bg-white border border-slate-200 rounded-xl p-8 text-sm leading-relaxed text-slate-sub space-y-6">

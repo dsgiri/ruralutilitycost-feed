@@ -3,11 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Feed by Rural Utility Cost</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/main.tsx" as="script" crossorigin="anonymous" />
+    
+    <!-- Google tag (gtag.js) EXACT AS REQUESTED -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG4VV8TP1E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RG4VV8TP1E');
+    </script>
+    
+    <meta name="theme-color" content="#2563eb" />
   </head>
   <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-white focus:text-brand-blue focus:p-4 focus:z-50 focus:outline-none focus:ring-2 focus:ring-brand-blue">
+      Skip to content
+    </a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Defer AdSense script as non-critical JS -->
+    <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-PUB-YOUR_CLIENT_ID" crossorigin="anonymous"></script>
   </body>
 </html>
 

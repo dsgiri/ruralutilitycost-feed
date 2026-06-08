@@ -1,5 +1,6 @@
 import { TOOLS } from '../data';
 import { useFavorites } from '../hooks/useFavorites';
+import { SEO } from '../components/SEO';
 import { ToolCard } from '../components/ToolCard';
 import { Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,10 @@ export function Favorites() {
 
   return (
     <div className="flex flex-col flex-1 w-full max-w-full">
+      <SEO 
+        title="My Favorite Feed Tools | Rural Utility Cost" 
+        description="Access your saved favorite feed calculators, conversion estimators, and ration planning tools quickly." 
+      />
       <section className="bg-gradient-to-r from-[#1e293b] to-[#334155] text-white px-6 md:px-10 py-6 h-auto md:h-[100px] flex flex-col justify-center shrink-0">
         <div className="flex items-center gap-3">
           <Heart className="w-6 h-6 text-red-500 fill-red-500" />
@@ -29,7 +34,7 @@ export function Favorites() {
             <p className="text-[13px] text-slate-500 mb-6 font-medium">
               Click the heart icon on any tool card across the application to save it here for quick access.
             </p>
-            <Link to="/" className="inline-block bg-brand-blue text-white px-6 py-2.5 rounded-md text-[13px] font-semibold hover:bg-blue-700 transition">
+            <Link to="/" className="inline-flex min-h-[48px] items-center justify-center bg-brand-blue text-white px-6 py-2.5 rounded-md text-[13px] font-semibold hover:bg-blue-700 transition">
               Browse Tools
             </Link>
           </div>
