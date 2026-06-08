@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import * as LucideIcons from 'lucide-react';
 import { Tool } from '../types';
 
@@ -46,12 +47,13 @@ export function ToolCard({ tool, isFavorite, onToggleFavorite }: ToolCardProps) 
         </div>
       </div>
 
-      <button 
+      <Link 
+        to={`/tool/${tool.id}`}
         onClick={handleLaunch}
         className="bg-brand-blue text-white text-center min-h-[48px] py-2 px-3 rounded-md text-[13px] font-semibold w-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer mt-auto tracking-wide focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
       >
         Launch Tool
-      </button>
+      </Link>
     </article>
   );
 }
