@@ -44,9 +44,6 @@ export function FeedCostCalc() {
   return (
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
       <div className="flex-1">
-        <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center">
-          Calculator Parameters
-        </h2>
         <form onSubmit={handleCalculate} className="space-y-6">
           <div className="space-y-4">
             <h3 className="font-semibold text-slate-700 text-sm uppercase tracking-wider">Ingredients</h3>
