@@ -1,20 +1,15 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Project Overview
 
-# Run and deploy your AI Studio app
+Welcome to the project repository. This project follows strict "Vibe Coding Standards" and a Plan-Implement-Validate (PIV) workflow.
 
-This contains everything you need to run your app locally.
+## Documentation
+All project documentation is located in the `/docs/` directory. For a full breakdown of the architecture, data models, and specifications, please refer to the files in that directory. 
 
-View your app in AI Studio: https://ai.studio/apps/dfe31a97-007c-4a41-996e-a36cc3ed9a8d
+## Task Management
+Active sprint tasks and backlogs are managed in `TASKS.md`. 
+Architectural decisions are tracked in `Planning.md` and `/docs/DECISIONS.md`.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Setup & Running
+- `npm install` to install dependencies
+- `npm run dev` to start the development server
+- `npm run build` to build for production

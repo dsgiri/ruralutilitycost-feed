@@ -2,7 +2,6 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { AdSense } from './AdSense';
 import { CookieConsent } from './CookieConsent';
 
 export function Layout() {
@@ -33,19 +32,11 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-earth-100 text-slate-text">
       <Header />
-      {/* Top Banner Ad Component */}
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
-        <AdSense slot="header_ad_slot" className="w-full max-w-[970px] min-h-[90px]" />
-      </div>
       
       <main id="main-content" className="flex-1 flex flex-col h-full w-full outline-none" tabIndex={-1}>
         <Outlet />
       </main>
       
-      {/* Footer Banner Ad Component */}
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 bg-earth-100 pt-4">
-        <AdSense slot="footer_ad_slot" className="w-full max-w-[728px] min-h-[90px]" />
-      </div>
       <Footer />
       
       <CookieConsent />

@@ -1,6 +1,5 @@
 import { useState, Fragment } from 'react';
 import { SEO } from '../components/SEO';
-import { AdSense } from '../components/AdSense';
 import { TOOLS } from '../data';
 import { useFavorites } from '../hooks/useFavorites';
 import { ToolCard } from '../components/ToolCard';
@@ -69,10 +68,6 @@ export function Home() {
               View stored favorites →
             </Link>
           </div>
-          
-          <div className="hidden md:block">
-             <AdSense slot="sidebar_ad_slot" className="w-[300px] h-[250px]" />
-          </div>
         </aside>
 
         {/* Tools Content */}
@@ -85,12 +80,6 @@ export function Home() {
                   isFavorite={isFavorite(tool.id)} 
                   onToggleFavorite={toggleFavorite} 
                 />
-                {/* In-content responsive AdSense after first 3 cards */}
-                {index === 2 && (
-                  <div key="inline-ad" className="col-span-1 sm:col-span-2 lg:col-span-3">
-                    <AdSense slot="in_content_ad_slot" className="w-full" />
-                  </div>
-                )}
               </Fragment>
             ))}
           </div>

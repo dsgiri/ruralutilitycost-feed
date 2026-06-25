@@ -1,5 +1,4 @@
 import { SEO } from '../components/SEO';
-import { AdSense } from '../components/AdSense';
 import { ArrowLeft, Globe, Map, LineChart, Sprout, Tractor, Home, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -140,12 +139,6 @@ export function Portfolio() {
               );
             })}
           </div>
-          
-          <aside className="hidden lg:block relative">
-            <div className="sticky top-[80px]">
-              <AdSense slot="sidebar_ad_slot" className="w-[300px] h-[600px]" />
-            </div>
-          </aside>
         </div>
       </main>
     </div>
