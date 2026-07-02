@@ -8,10 +8,6 @@ export function Header() {
 
   const navLinks = [
     { label: 'Feed Hub', path: '/' },
-    { label: 'Plan', href: 'https://plan.ruralutilitycost.com/' },
-    { label: 'Forecast', href: 'https://forecast.ruralutilitycost.com/' },
-    { label: 'What If', href: 'https://whatif.ruralutilitycost.com/' },
-    { label: 'Predictor', href: 'https://predictor.ruralutilitycost.com/' },
     { label: 'My Favorites', path: '/favorites' },
   ];
 
@@ -28,22 +24,10 @@ export function Header() {
           {navLinks.map((link) => {
             const isActive = link.path ? (location.pathname === link.path || (link.path === '/' && location.pathname === '/')) : false;
             
-            if (link.href) {
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="transition-colors hover:text-barn"
-                >
-                  {link.label}
-                </a>
-              );
-            }
-            
             return (
               <Link
                 key={link.label}
-                to={link.path!}
+                to={link.path}
                 className={`transition-colors hover:text-barn ${
                   isActive ? 'text-barn font-medium' : ''
                 }`}
@@ -76,23 +60,10 @@ export function Header() {
       {isOpen && (
         <div className="md:hidden fixed top-[69px] left-0 right-0 bg-paper border-b border-line shadow-lg p-4 flex flex-col gap-2 z-20">
           {navLinks.map((link) => {
-            if (link.href) {
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-ink-soft hover:text-ink block text-base font-medium min-h-[48px] flex items-center px-4 rounded-md focus:bg-paper-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              );
-            }
-            
             return (
               <Link
                 key={link.label}
-                to={link.path!}
+                to={link.path}
                 className="text-ink-soft hover:text-ink block text-base font-medium min-h-[48px] flex items-center px-4 rounded-md focus:bg-paper-2"
                 onClick={() => setIsOpen(false)}
               >

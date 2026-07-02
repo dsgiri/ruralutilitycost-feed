@@ -78,7 +78,7 @@ export function FeedCostCalc() {
                 </div>
               ))}
             </div>
-            <button type="button" onClick={addIngredient} className="inline-flex items-center text-barn text-sm font-semibold hover:text-blue-700 transition-colors mt-2">
+            <button type="button" onClick={addIngredient} className="inline-flex items-center text-barn text-sm font-semibold hover:text-barn-2 transition-colors mt-2">
               <span className="text-lg mr-1 leading-none">+</span> Add Another Ingredient
             </button>
           </div>

@@ -34,7 +34,7 @@ export function Favorites() {
             <p className="text-[13px] text-slate-500 mb-6 font-medium">
               Click the heart icon on any tool card across the application to save it here for quick access.
             </p>
-            <Link to="/" className="inline-flex min-h-[48px] items-center justify-center bg-brand-blue text-white px-6 py-2.5 rounded-md text-[13px] font-semibold hover:bg-blue-700 transition">
+            <Link to="/" className="inline-flex min-h-[48px] items-center justify-center bg-barn text-white px-6 py-2.5 rounded-md text-[13px] font-semibold hover:bg-barn-2 transition">
               Browse Tools
             </Link>
           </div>

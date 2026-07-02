@@ -152,16 +152,7 @@ export function Home() {
         </div>
       </section>
       
-      <footer className="p-8 text-center text-[12.5px] text-ink-soft border-t border-line" id="contact">
-        <div>© 2026 Rural Utility Cost. Results are estimates.</div>
-        <div className="mt-2 flex gap-4 justify-center flex-wrap">
-          <a href="#" className="hover:text-barn transition-colors">Parent site</a>
-          <a href="#" className="hover:text-barn transition-colors">Contact</a>
-          <a href="#" className="hover:text-barn transition-colors">Terms of use</a>
-          <a href="#" className="hover:text-barn transition-colors">Privacy policy</a>
-          <a href="#" className="hover:text-barn transition-colors">Disclaimer</a>
-        </div>
-      </footer>
+      
     </div>
   );
 }

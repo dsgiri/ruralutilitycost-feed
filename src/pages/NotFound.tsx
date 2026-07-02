@@ -18,7 +18,7 @@ export function NotFound() {
       </p>
       <Link 
         to="/" 
-        className="inline-flex min-h-[48px] items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-blue hover:bg-blue-700 transition"
+        className="inline-flex min-h-[48px] items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-barn hover:bg-barn-2 transition"
       >
         Return to Feed Hub
       </Link>

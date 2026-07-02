@@ -30,7 +30,7 @@ export function Layout() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-earth-100 text-slate-text">
+    <div className="min-h-screen flex flex-col font-sans bg-earth-100 text-ink">
       <Header />
       
       <main id="main-content" className="flex-1 flex flex-col h-full w-full outline-none" tabIndex={-1}>

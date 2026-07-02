@@ -107,7 +107,7 @@ export function Portfolio() {
               return (
                 <section key={idx} className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 shadow-sm">
                   <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-                    <div className="bg-slate-50 p-2 rounded-lg text-brand-blue border border-slate-200">
+                    <div className="bg-slate-50 p-2 rounded-lg text-barn border border-slate-200">
                       <Icon className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <h2 className="text-[18px] font-bold text-slate-text">{category.title}</h2>
@@ -117,10 +117,10 @@ export function Portfolio() {
                     {category.links.map((link, linkIdx) => {
                       const isCurrent = link.name.includes("(Current)");
                       return (
-                        <div key={linkIdx} className={`border rounded-lg p-4 transition-colors ${isCurrent ? 'border-brand-blue bg-blue-50/50' : 'border-slate-100 hover:border-brand-blue hover:shadow-sm bg-white'}`}>
+                        <div key={linkIdx} className={`border rounded-lg p-4 transition-colors ${isCurrent ? 'border-barn bg-blue-50/50' : 'border-slate-100 hover:border-barn hover:shadow-sm bg-white'}`}>
                           <a 
                             href={link.url} 
-                            className="font-bold text-[14px] text-brand-blue hover:text-blue-800 hover:underline inline-block mb-1 tracking-tight"
+                            className="font-bold text-[14px] text-barn hover:text-blue-800 hover:underline inline-block mb-1 tracking-tight"
                             aria-current={isCurrent ? "page" : undefined}
                           >
                             Explore {link.name}

@@ -62,7 +62,7 @@ export function Contact() {
                  aria-describedby={errors.name ? "name-error" : undefined}
                  value={formData.name}
                  onChange={e => setFormData({...formData, name: e.target.value})}
-                 className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-slate-300'} rounded-md min-h-[48px] p-2.5 text-sm focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-shadow text-slate-text`} 
+                 className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-slate-300'} rounded-md min-h-[48px] p-2.5 text-sm focus:border-barn focus:ring-1 focus:ring-barn outline-none transition-shadow text-slate-text`} 
                  placeholder="Jane Doe" 
               />
               {errors.name && <p id="name-error" className="text-red-500 text-[12px] mt-1">{errors.name}</p>}
@@ -79,7 +79,7 @@ export function Contact() {
                  aria-describedby={errors.email ? "email-error" : undefined}
                  value={formData.email}
                  onChange={e => setFormData({...formData, email: e.target.value})}
-                 className={`w-full bg-white border ${errors.email ? 'border-red-500' : 'border-slate-300'} rounded-md min-h-[48px] p-2.5 text-sm focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-shadow text-slate-text`} 
+                 className={`w-full bg-white border ${errors.email ? 'border-red-500' : 'border-slate-300'} rounded-md min-h-[48px] p-2.5 text-sm focus:border-barn focus:ring-1 focus:ring-barn outline-none transition-shadow text-slate-text`} 
                  placeholder="you@example.com" 
               />
               {errors.email && <p id="email-error" className="text-red-500 text-[12px] mt-1">{errors.email}</p>}
@@ -96,12 +96,12 @@ export function Contact() {
                  aria-describedby={errors.message ? "message-error" : undefined}
                  value={formData.message}
                  onChange={e => setFormData({...formData, message: e.target.value})}
-                 className={`w-full bg-white border ${errors.message ? 'border-red-500' : 'border-slate-300'} rounded-md p-2.5 text-sm focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition-shadow text-slate-text`} 
+                 className={`w-full bg-white border ${errors.message ? 'border-red-500' : 'border-slate-300'} rounded-md p-2.5 text-sm focus:border-barn focus:ring-1 focus:ring-barn outline-none transition-shadow text-slate-text`} 
                  placeholder="How can we help?"
               ></textarea>
               {errors.message && <p id="message-error" className="text-red-500 text-[12px] mt-1">{errors.message}</p>}
             </div>
-            <button type="submit" className="inline-flex justify-center min-h-[48px] items-center py-2.5 px-6 border border-transparent rounded-md shadow-sm text-[13px] font-semibold text-white bg-brand-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue transition-colors mt-2">
+            <button type="submit" className="inline-flex justify-center min-h-[48px] items-center py-2.5 px-6 border border-transparent rounded-md shadow-sm text-[13px] font-semibold text-white bg-barn hover:bg-barn-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-barn transition-colors mt-2">
               Send Message
             </button>
           </form>
