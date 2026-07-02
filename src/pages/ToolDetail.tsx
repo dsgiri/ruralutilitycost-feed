@@ -3,6 +3,7 @@ import { SEO } from '../components/SEO';
 import { TOOLS } from '../data';
 import { ArrowLeft, Calculator } from 'lucide-react';
 import { NotFound } from './NotFound';
+import { ToolContent } from '../components/ToolContent';
 
 import {
   FeedCostCalc,
@@ -38,7 +39,7 @@ export function ToolDetail() {
   };
 
   return (
-    <div className="flex flex-col flex-1 w-full bg-slate-50/50 min-h-[calc(100vh-64px)]">
+    <div className="flex flex-col flex-1 w-full bg-paper min-h-[calc(100vh-64px)] font-sans">
       <SEO 
         title={`${tool.title} | Feed Hub`} 
         description={tool.description} 
@@ -48,32 +49,34 @@ export function ToolDetail() {
         <div className="mb-8 md:mb-10">
           <Link 
             to="/" 
-            className="inline-flex items-center text-slate-500 hover:text-brand-blue font-medium text-sm mb-6 transition-colors group"
+            className="inline-flex items-center text-ink-soft hover:text-ink font-medium text-sm mb-6 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" />
             Back to Calculators
           </Link>
           
           <div className="flex items-start md:items-center gap-4">
-            <div className="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200/60 hidden md:block">
-              <Calculator className="w-7 h-7 text-brand-blue" />
+            <div className="bg-white p-3.5 rounded-2xl shadow-sm border border-line hidden md:block">
+              <Calculator className="w-7 h-7 text-barn" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+              <h1 className="text-2xl md:text-4xl font-display font-bold text-ink tracking-tight mb-2">
                 {tool.title}
               </h1>
-              <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed">
+              <p className="text-ink-soft text-sm md:text-base max-w-2xl leading-relaxed">
                 {tool.description}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white border border-slate-200/80 rounded-2xl shadow-sm md:shadow-md overflow-hidden">
+        <div className="bg-white border border-line rounded-2xl shadow-sm md:shadow-md overflow-hidden">
           <div className="p-5 md:p-8 lg:p-10">
             {renderCalculator()}
           </div>
         </div>
+
+        <ToolContent toolId={tool.id} />
       </main>
     </div>
   );

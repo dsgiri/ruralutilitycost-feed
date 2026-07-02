@@ -1,59 +1,87 @@
+import React from "react";
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import * as LucideIcons from 'lucide-react';
 import { Tool } from '../types';
+import { Heart } from 'lucide-react';
 
-interface ToolCardProps {
+interface ToolCardProps { key?: React.Key;
   tool: Tool;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
 }
 
 export function ToolCard({ tool, isFavorite, onToggleFavorite }: ToolCardProps) {
-  
-  const handleLaunch = () => {
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      // @ts-ignore
-      window.gtag('event', 'click', { element: `launch_tool_${tool.id}` });
-    }
+  // Initialize state with default values from tool.sliders
+  const initialState = tool.sliders?.reduce((acc, slider) => {
+    acc[slider.id] = slider.val;
+    return acc;
+  }, {} as Record<string, number>) || {};
+
+  const [values, setValues] = useState<Record<string, number>>(initialState);
+
+  const handleSliderChange = (id: string, val: number) => {
+    setValues(prev => ({ ...prev, [id]: val }));
   };
 
+  const calcResult = tool.calc && tool.sliders ? tool.calc(values) : '—';
+
   return (
-    <article className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] h-full">
-      <div className="flex justify-between items-start">
-        <span className="text-[10px] uppercase px-1.5 py-0.5 bg-earth-200 rounded text-slate-sub font-semibold tracking-wider">
+    <div className="bg-card border border-line rounded-xl p-5 md:p-[22px] flex flex-col h-full">
+      <div className="flex justify-between items-start mb-3">
+        <span className="text-[10.5px] uppercase tracking-[0.09em] text-barn bg-barn/10 px-[9px] py-[5px] rounded font-semibold">
           {tool.category}
         </span>
         <button
           onClick={() => onToggleFavorite(tool.id)}
-          className={`cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-blue transition-colors p-2 -mr-2 -mt-2 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full ${
-            isFavorite ? 'text-red-500' : 'text-slate-300 hover:text-red-400'
+          className={`cursor-pointer hover:text-rust focus:outline-none transition-colors p-1 ${
+            isFavorite ? 'text-rust' : 'text-ink-soft'
           }`}
           aria-label={isFavorite ? `Remove ${tool.title} from favorites` : `Add ${tool.title} to favorites`}
-          aria-pressed={isFavorite}
         >
-          <LucideIcons.Heart className={`h-5 w-5 ${isFavorite ? 'fill-red-500' : ''}`} aria-hidden="true" />
+          <Heart className={`h-4 w-4 ${isFavorite ? 'fill-rust' : ''}`} aria-hidden="true" />
         </button>
       </div>
 
-      <div className="flex-1 mt-3">
-        <h4 className="font-bold text-[14px] text-slate-text">{tool.title}</h4>
-        <p className="text-[12px] text-slate-500 mt-1 line-clamp-2" title={tool.description}>
-          {tool.description}
-        </p>
+      <h3 className="font-display text-[19px] mb-1.5 text-ink tracking-tight">{tool.title}</h3>
+      <p className="text-[13.5px] text-ink-soft mb-4 line-clamp-2" title={tool.description}>
+        {tool.description}
+      </p>
 
-        <div className="bg-slate-50 border-l-[3px] border-brand-green p-2 my-3 text-[12px] text-slate-text" aria-label="Primary Outcome">
-          Primary Outcome:<br />
-          <span className="font-bold text-brand-green text-[14px]">{tool.primaryOutcome}</span>
+      {tool.sliders && tool.sliders.length > 0 && (
+        <div className="bg-paper-2 border border-line rounded-lg p-3.5 mb-3.5">
+          {tool.sliders.map(slider => (
+            <div key={slider.id} className="mb-2.5 last:mb-0">
+              <div className="flex justify-between text-xs text-ink-soft mb-1.5">
+                <span>{slider.label}</span>
+                <b className="text-ink font-semibold">{slider.fmt(values[slider.id] || slider.val)}</b>
+              </div>
+              <input
+                type="range"
+                min={slider.min}
+                max={slider.max}
+                step={slider.step}
+                value={values[slider.id] || slider.val}
+                onChange={(e) => handleSliderChange(slider.id, parseFloat(e.target.value))}
+                className="w-full h-[3px] bg-[#D3C9AC] appearance-none rounded-full outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-[13px] [&::-webkit-slider-thumb]:h-[13px] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-paper-2 [&::-webkit-slider-thumb]:bg-barn [&::-moz-range-thumb]:w-[13px] [&::-moz-range-thumb]:h-[13px] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-paper-2 [&::-moz-range-thumb]:bg-barn cursor-pointer"
+              />
+            </div>
+          ))}
+          
+          <div className="bg-barn-3 rounded-md px-3 py-2 mt-2.5 flex justify-between items-baseline">
+            <span className="text-[10px] text-[#7C8F85] uppercase tracking-[0.08em]">{tool.outCap}</span>
+            <span className="font-mono text-[18px] font-semibold text-wheat-light">{calcResult}</span>
+          </div>
         </div>
-      </div>
+      )}
 
-      <Link 
-        to={`/tool/${tool.id}`}
-        onClick={handleLaunch}
-        className="bg-brand-blue text-white text-center min-h-[48px] py-2 px-3 rounded-md text-[13px] font-semibold w-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer mt-auto tracking-wide focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
-      >
-        Launch Tool
-      </Link>
-    </article>
+      <div className="mt-auto flex justify-between items-center pt-0.5">
+        <Link 
+          to={`/tool/${tool.id}`}
+          className="text-[13.5px] font-semibold text-barn hover:text-rust transition-colors flex items-center gap-1.5 focus:outline-none"
+        >
+          Open full tool <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+    </div>
   );
 }
