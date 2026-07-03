@@ -7,6 +7,7 @@ interface SEOProps {
   url?: string;
   type?: string;
   imageUrl?: string;
+  schemas?: any[];
 }
 
 export function SEO({ 
@@ -15,16 +16,37 @@ export function SEO({
   keywords = "feed planning, ration planning, feed cost hub, feed conversion, agricultural feed, rural utility cost", 
   url = "https://feed.ruralutilitycost.com", 
   type = "website",
-  imageUrl = "https://feed.ruralutilitycost.com/og-image.jpg"
+  imageUrl = "https://feed.ruralutilitycost.com/og-image.jpg",
+  schemas = []
 }: SEOProps) {
   
-  const structuredData = {
+  const baseSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": title,
     "description": description,
     "url": url
   };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://feed.ruralutilitycost.com/" }
+    ]
+  };
+  
+  // Try to generate breadcrumb from URL if it's not home
+  if (url !== "https://feed.ruralutilitycost.com" && url !== "https://feed.ruralutilitycost.com/") {
+    if (url.includes('/tool/')) {
+       breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://feed.ruralutilitycost.com/" });
+       breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title.split(' | ')[0], "item": url });
+    } else {
+       breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": title.split(' | ')[0], "item": url });
+    }
+  }
+
+  const allSchemas = [baseSchema, breadcrumbSchema, ...schemas];
 
   return (
     <Helmet>
@@ -46,9 +68,11 @@ export function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      {allSchemas.map((schema, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 }

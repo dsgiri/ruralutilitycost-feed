@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ToolContentProps {
   toolId: string;
@@ -398,7 +399,7 @@ export function ToolContent({ toolId }: ToolContentProps) {
           
           <div>
             <h3 className="font-bold text-ink mb-1">Does waste reduction equipment pay for itself?</h3>
-            <p className="leading-relaxed">Often, yes, and usually faster than expected — the worked example above shows over $4,000/year recovered from a modest waste reduction on a mid-sized feed budget, which frequently exceeds the cost of feeder upgrades within the first year or two.</p>
+            <p className="leading-relaxed">Often, yes, and usually faster than expected — the worked example above shows over $4,000/year recovered from a modest waste reduction on a <Link to="/tool/feed-budget" className="text-barn underline underline-offset-2">mid-sized feed budget</Link>, which frequently exceeds the cost of feeder upgrades within the first year or two.</p>
           </div>
           
           <div>
@@ -447,7 +448,7 @@ export function ToolContent({ toolId }: ToolContentProps) {
         <ul className="space-y-4 mb-8 text-ink-soft">
           <li><strong>Tracking only the aggregate invoice total.</strong> Total spend conflates herd size changes, price changes, and waste changes into one number. Per-head tracking isolates the actual driver.</li>
           <li><strong>Using an outdated head count.</strong> If your headcount changes frequently (calving, sales, purchases), recalculate using your current count, not the number from when you last ran the math.</li>
-          <li><strong>Mixing feed types into one blended number without noting it.</strong> If different groups (calves, finishing cattle, cows) are on different rations at different costs, a single blended per-head number can mask which group's cost is actually shifting. Break out by group where possible.</li>
+          <li><strong>Mixing feed types into one blended number without noting it.</strong> If different groups (calves, finishing cattle, cows) are on different rations at different costs, a single blended <Link to="/tool/cost-per-head" className="text-barn underline underline-offset-2">per-head number</Link> can mask which group's cost is actually shifting. Break out by group where possible.</li>
           <li><strong>Not comparing against a consistent baseline.</strong> Cost per head per day naturally shifts with season, feed type, and animal class. Compare current numbers against the same period last year or the same production stage, not an arbitrary earlier month.</li>
           <li><strong>Forgetting to include waste and delivery costs.</strong> If your "total daily cost" input only reflects the raw feed invoice, your per-head number understates your real cost. Include delivery fees and a waste adjustment for a more accurate figure.</li>
         </ul>
@@ -523,7 +524,7 @@ export function ToolContent({ toolId }: ToolContentProps) {
           <li><strong>Forecasting off current headcount without planning for changes.</strong> If you're planning to expand, cull, or seasonally adjust herd size, build that into the forecast rather than assuming a static number all year.</li>
           <li><strong>Ignoring commodity price trend and volatility.</strong> If corn or soybean meal prices are trending upward, a forecast built purely on current pricing will likely undershoot. Build in a buffer, especially for feed types tied closely to volatile commodity markets.</li>
           <li><strong>Not revisiting the forecast during the year.</strong> A budget set in January and never checked again isn't managing cost, it's just guessing once. Revisit quarterly at minimum against actual spend.</li>
-          <li><strong>Forecasting feed cost in isolation from storage and delivery logistics.</strong> A bigger annual budget number is only useful if your storage capacity and delivery schedule can actually support the volume it implies — check your storage capacity against your forecasted annual tonnage.</li>
+          <li><strong>Forecasting feed cost in isolation from storage and delivery logistics.</strong> A bigger annual budget number is only useful if your storage capacity and delivery schedule can actually support the volume it implies — check your <Link to="/tool/feed-storage" className="text-barn underline underline-offset-2">storage capacity</Link> against your forecasted annual tonnage.</li>
         </ul>
 
         <h2 className="font-display text-2xl mb-4 text-ink">How to use the numbers you get</h2>
@@ -554,7 +555,7 @@ export function ToolContent({ toolId }: ToolContentProps) {
           
           <div>
             <h3 className="font-bold text-ink mb-1">What if my actual spend consistently comes in above the forecast?</h3>
-            <p className="leading-relaxed">That's a signal worth investigating rather than just adjusting the forecast upward each time — check whether it's a price trend, a waste problem, an intake miscalculation, or a herd size change, using the other tools in this hub to isolate the cause.</p>
+            <p className="leading-relaxed">That's a signal worth investigating rather than just adjusting the forecast upward each time — check whether it's a price trend, a waste problem, an intake miscalculation, or a herd size change, using the <Link to="/" className="text-barn underline underline-offset-2">other tools</Link> in this hub to isolate the cause.</p>
           </div>
         </div>
 

@@ -33,8 +33,8 @@ export function Home() {
   return (
     <div className="flex flex-col flex-1 w-full max-w-full font-sans text-ink">
       <SEO 
-        title="Feed Planning & Cost Hub | Rural Utility Cost" 
-        description="Compare feed options, estimate costs, plan rations, and manage feed waste with our suite of agricultural feed tools." 
+        title="Feed Planning & Cost Hub | Free Livestock Feed Calculators" 
+        description="Free calculators for feed cost per ton, per head, storage capacity, conversion ratios, and more. Built for ranchers, feedlots, and livestock buyers." 
       />
       
       {/* Hero Section */}

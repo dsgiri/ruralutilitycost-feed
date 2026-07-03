@@ -13,3 +13,6 @@ Architectural decisions are tracked in `Planning.md` and `/docs/DECISIONS.md`.
 - `npm install` to install dependencies
 - `npm run dev` to start the development server
 - `npm run build` to build for production
+
+## Deployment
+This project is configured for Vercel hosting. A `vercel.json` file is included in the root directory for proper client-side routing on Vercel.

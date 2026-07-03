@@ -1,0 +1,146 @@
+{
+  "feed-cost-calc": [
+    {
+      "q": "How often should I recalculate feed cost?",
+      "a": "Any time your supplier changes price, you switch rations, or your herd size changes meaningfully. Commodity-based feeds especially can move month to month, so a quarterly check-in at minimum is a good habit even if nothing else has changed."
+    },
+    {
+      "q": "Is bulk feed always cheaper than bagged?",
+      "a": "Usually, but not always. Bulk pricing benefits from lower packaging cost, but if you don't have storage for a full load, or if a bulk delivery minimum forces you to buy more than you'll use before it degrades, bagged can come out ahead. Compare landed cost per ton in both cases."
+    },
+    {
+      "q": "Does this account for nutritional value, not just price?",
+      "a": "Not directly — this tool standardizes cost only. Two rations at the same price per ton can have very different protein or energy content, which changes what you're actually paying for a unit of nutrition. Pair this with a ration comparison tool if you're deciding between blends with different nutritional profiles."
+    },
+    {
+      "q": "What intake rate should I use if I haven't measured it?",
+      "a": "A common starting estimate is 2-2.5% of body weight in dry matter per day for cattle, but this varies by class of animal, forage quality, and season. Treat it as a placeholder until you can weigh actual consumption."
+    }
+  ],
+  "ration-compare": [
+    {
+      "q": "Should I always pick the ration with more protein?",
+      "a": "Not automatically. More protein than your animals need is wasted cost, not wasted nutrition — it doesn't add extra value if the animal can't use it. Match the ration to your class of livestock's actual requirement, not the highest number available."
+    },
+    {
+      "q": "How do I compare rations with different ingredients, not just different protein levels?",
+      "a": "This tool handles a straightforward cost-and-protein comparison. For a full nutritional breakdown across energy, fiber, and minerals, a ration formulated by a livestock nutritionist using your specific forage test results will give a more complete picture."
+    },
+    {
+      "q": "What if my two options have different feeding rates recommended by the supplier?",
+      "a": "Always normalize to the same daily intake before comparing cost. Comparing a ration fed at 15 lb/day against one price-per-ton alone will give you a misleading answer."
+    },
+    {
+      "q": "Does a higher-cost ration always mean better performance?",
+      "a": "No. Price and quality are correlated but not identical — some premium-priced rations are priced for brand and marketing rather than nutritional superiority. Compare the actual nutrient panel, not just the price tag."
+    }
+  ],
+  "feed-conversion": [
+    {
+      "q": "What's considered a \"good\" FCR?",
+      "a": "It varies significantly by species, breed, and production stage — a good FCR for a broiler chicken looks completely different from a good FCR for a finishing steer. The most useful comparison is your own herd's FCR over time and against your own historical baseline, not a generic industry number."
+    },
+    {
+      "q": "Why is my FCR getting worse over the feeding period?",
+      "a": "FCR naturally rises as animals approach finished weight — mature animals convert feed to gain less efficiently than younger, rapidly growing ones. A rising FCR late in the feeding period is often expected, not necessarily a sign of a problem."
+    },
+    {
+      "q": "Does water intake affect FCR?",
+      "a": "Not directly in the calculation, but inadequate water access can suppress feed intake and gain simultaneously, which can distort your readings. Make sure water access isn't a limiting factor before troubleshooting the ration itself."
+    },
+    {
+      "q": "Can I use this for species other than cattle?",
+      "a": "The FCR formula (feed intake ÷ weight gain) applies across species — hogs, poultry, and small ruminants included. Just make sure your intake and gain measurements are recorded over a consistent, comparable time window for whichever species you're tracking."
+    }
+  ],
+  "feed-storage": [
+    {
+      "q": "Does this work for silage bunkers and pits, not just bins?",
+      "a": "The same length × width × depth × density approach applies, though silage bulk density varies more with packing density and moisture than dry feed. Well-packed silage commonly runs 40-45 lb/cubic ft, but get a local extension estimate for your specific forage and packing method for a more precise number."
+    },
+    {
+      "q": "How much should I subtract for unusable space?",
+      "a": "A common rule of thumb is 5-10% below theoretical volume for cone effects in upright bins, but this varies by bin design, discharge type, and feed flow characteristics. If you have historical fill records, use those to calibrate rather than relying on a generic percentage."
+    },
+    {
+      "q": "What bulk density should I use if I'm not sure what my feed weighs?",
+      "a": "Ask your supplier for the specific bulk density of the product you're buying — it's a standard spec they should have on hand. In the absence of that, whole corn (45-48 lb/cu ft) and pelleted rations (40-42 lb/cu ft) are reasonable starting estimates."
+    },
+    {
+      "q": "Does temperature or humidity affect stored capacity over time?",
+      "a": "Not the physical capacity of the structure, but both affect feed quality and safe storage duration. High-moisture conditions increase spoilage and mold risk regardless of how much physical space remains."
+    }
+  ],
+  "feed-waste": [
+    {
+      "q": "What's a realistic waste percentage to target?",
+      "a": "Well-managed bunk feeding operations commonly achieve 5-8% waste. Anything consistently above 15% usually points to a specific fixable cause — overfilling, poor feeder design, or ground feeding — rather than an unavoidable baseline."
+    },
+    {
+      "q": "How do I estimate my waste percentage without special equipment?",
+      "a": "Weigh what goes into the feeder and, before the next feeding, weigh or visually estimate what's left uneaten or on the ground versus consumed. A rough week-long observation is usually enough to get a workable estimate."
+    },
+    {
+      "q": "Does waste reduction equipment pay for itself?",
+      "a": "Often, yes, and usually faster than expected — the worked example above shows over $4,000/year recovered from a modest waste reduction on a mid-sized feed budget, which frequently exceeds the cost of feeder upgrades within the first year or two."
+    },
+    {
+      "q": "Is spoilage the same thing as feeding waste for this calculator?",
+      "a": "This tool treats them as one combined loss percentage for simplicity, but they have different causes and different fixes — spoilage points back to storage practices, while feeding waste points to feeder design and feeding schedule. Track them separately if you want to target the fix precisely."
+    }
+  ],
+  "cost-per-head": [
+    {
+      "q": "What's a typical cost per head per day for cattle?",
+      "a": "It varies enormously by animal class, region, and current commodity pricing — a cow-calf pair on pasture costs very differently from a finishing steer on a high-concentrate ration. Your own historical trend is a more useful benchmark than an industry-wide average."
+    },
+    {
+      "q": "Should I calculate this per animal or as a herd average?",
+      "a": "A herd average is useful for overall budgeting, but if you're managing distinct groups (different ages, rations, or production stages), calculating separately for each group will surface problems that a single blended average would hide."
+    },
+    {
+      "q": "How often should I check this number?",
+      "a": "Weekly or monthly is typical for most operations — frequent enough to catch drift early, infrequent enough to avoid chasing normal day-to-day noise in the numbers."
+    },
+    {
+      "q": "Does this account for non-feed costs like labor or veterinary care?",
+      "a": "No — this is a feed-cost-only figure. It's meant to isolate feed spend specifically so you can manage that line item, not as a full per-head cost of production number."
+    }
+  ],
+  "feed-budget": [
+    {
+      "q": "How far in advance should I build this forecast?",
+      "a": "Most producers plan on an annual cycle, but if you're negotiating supplier contracts, a rolling 12-18 month view gives you more room to lock in favorable pricing before it's needed."
+    },
+    {
+      "q": "Should I forecast using today's feed price or an estimated future price?",
+      "a": "Both are useful for different purposes — today's price gives you a conservative baseline, while a trend-adjusted estimate (if you're tracking commodity futures or supplier guidance) gives you a more realistic picture if prices are moving in a clear direction."
+    },
+    {
+      "q": "How do I account for seasonal feeding differences in one annual number?",
+      "a": "Break your year into seasonal segments (e.g., winter feeding vs. pasture season) with different daily cost estimates for each, then sum the segments rather than using one flat daily rate across all 365 days."
+    },
+    {
+      "q": "What if my actual spend consistently comes in above the forecast?",
+      "a": "That's a signal worth investigating rather than just adjusting the forecast upward each time — check whether it's a price trend, a waste problem, an intake miscalculation, or a herd size change, using the other tools in this hub to isolate the cause."
+    }
+  ],
+  "dry-matter-intake": [
+    {
+      "q": "What intake percentage should I start with if I don't have a measured number?",
+      "a": "2-2.5% of body weight in dry matter per day is a commonly used starting estimate for cattle, though it varies by class and should be adjusted as you gather real consumption data specific to your herd."
+    },
+    {
+      "q": "How is dry matter intake different from as-fed intake?",
+      "a": "As-fed intake includes the moisture content of the feed; dry matter intake strips that out to measure the actual nutritional substance being consumed. A wet, high-moisture feed will have a much higher as-fed weight than dry matter weight — always confirm which measurement a supplier or reference is using."
+    },
+    {
+      "q": "Does DMI change significantly as an animal grows?",
+      "a": "Yes — since DMI is calculated as a percentage of body weight, it increases as the animal gains weight, even at a constant percentage rate. Recalculating periodically through a growth period keeps your feed and cost estimates accurate."
+    },
+    {
+      "q": "How much does heat stress actually reduce intake?",
+      "a": "The magnitude varies by severity and duration of the heat event, breed, and management (shade, water access, ventilation), but meaningful intake suppression during sustained heat stress is well documented. If you're in a region with hot summers, plan for a seasonal intake dip rather than assuming a flat rate year-round."
+    }
+  ]
+}
